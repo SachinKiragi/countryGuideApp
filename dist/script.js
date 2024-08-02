@@ -41,12 +41,12 @@ function showResult(data){
     
         <!-- Flag image container -->
             <div class="h-[10rem] w-[100%]  flex flex-col justify-center items-center gap-2">
-                <img src="${data[0].flags['png']}" alt="" class="h-[6rem] w-[10rem] border-black border-2">
-                <h2>${data[0].name.common}</h2>
+                <img src="${data[0].flags['png']}" alt="" class="h-[6rem] w-[10rem] border-none">
+                <h2 class=" font-semibold">${data[0].name.common}</h2>
             </div>
 
             <!-- #Information -->
-            <div class="flex flex-col gap-2">
+            <div class="flex flex-col gap-[1rem] items-start md:none ">
 
                     <!-- capital -->
                     <h2 class="font-bold tracking-wide">Capital : <span class="font-normal text-sm">${data[0].capital[0]}</span></h2>
