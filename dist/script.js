@@ -1,13 +1,17 @@
 let url = `https://restcountries.com/v3.1/name/{name}?fullText=true`;
 
+// Div containg overall information extracted from api
 let result = document.getElementById('result');
 
+// Search a result if a user press key enter
 window.addEventListener('keyup', (e)=>{
     if(e.key=="Enter") getCountry();
 })
 
+// Addubd Event listner on search button
 document.getElementById('btn').addEventListener('click', getCountry);
 
+// function to read inputed country from user
 function getCountry(){
 
     let country = document.getElementById('input-country').value;
@@ -18,6 +22,8 @@ function getCountry(){
     }
 }
 
+
+// Function to display country information
 async function showCountryInfo(country){
     let finalUrl = `https://restcountries.com/v3.1/name/${country}?fullText=true`
 
@@ -33,7 +39,7 @@ async function showCountryInfo(country){
 
 }
 
-
+// function to show result if fetch is successfull
 function showResult(data){
     result.style.textAlign = "initial";
     let m = data[0].currencies;
@@ -54,19 +60,21 @@ function showResult(data){
                     <!-- Continent -->
                     <h2 class="font-bold tracking-wide">Continent : <span class="font-normal text-sm">${data[0].continents[0]}</span></h2>
 
-                    <!-- capital -->
+                    <!-- population -->
                     <h2 class="font-bold tracking-wide">Population : <span class="font-normal text-sm">${data[0].population}</span></h2>
 
-                    <!-- capital -->
-                    <h2 class="font-bold tracking-wide">Currenecy : <span class="font-normal text-sm">${Object.keys(m)[0]}, ${m[Object.keys(m)].name}</span></h2>
+                    <!-- currency -->
+                    <h2 class="font-bold tracking-wide">Currency : <span class="font-normal text-sm">${Object.keys(m)[0]}, ${m[Object.keys(m)].name}</span></h2>
 
-                    <!-- capital -->
+                    <!-- languages -->
                     <h2 class="font-bold tracking-wide">Common Language : <span class="font-normal text-sm">${Object.values(data[0].languages).toString().split(",").join(", ")}</span></h2>
             </div>
 
     `
 }
 
+
+// function to show message if fetch is unsuccessfull
 function showError(){
     result.style.textAlign = "center";
     result.innerHTML = `
