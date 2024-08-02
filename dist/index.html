@@ -4,9 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="./output.css">
 </head>
-<body>
-    <h1 class="bg-slate-700">Hello</h1>
+<body class="bg-blue-500">
+
+     <!-- Main container -->
+     <div class="bg-white border-black border-2 h-fit w-[22rem] absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] p-5 rounded-lg border-none">
+
+        <!-- search box -->
+         <div class="flex justify-between px-2 py-2">
+            <!-- User input -->
+             <input class="border-b-2 border-blue-500 outline-none w-[65%]" type="text" id="input-country" placeholder="Enter country name">
+
+             <!-- Search button -->
+              <button class="bg-blue-600 text-white font-semibold w-[30%] rounded-3xl h-[2.2rem]" id="btn">Search</button>
+
+         </div>
+
+            <div id="result" class="flex flex-col gap-1 mt-5">
+            
+            </div>
+     </div>
 </body>
+<script src="script.js"></script>
 </html>
